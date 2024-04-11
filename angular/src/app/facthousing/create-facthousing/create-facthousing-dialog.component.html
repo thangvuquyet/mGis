@@ -1,0 +1,124 @@
+<form class="form-horizontal" autocomplete="off" #createUserModal="ngForm" (ngSubmit)="save()">
+    <abp-modal-header [title]="'Create New Fact housing' | localize"
+        (onCloseClick)="bsModalRef.hide()"></abp-modal-header>
+    <div class="modal-body">
+        <tabset>
+            <tab [heading]="'FactHousing Details' | localize" class="pt-3 px-2">
+                <div class="form-group row required">
+                    <label class="col-md-3 col-form-label" for="name">
+                        House ID
+                    </label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="name" id="name" required maxlength="32"
+                            [(ngModel)]="facthousing.houseID" #nameModel="ngModel" #nameEl />
+                        <abp-validation-summary [control]="nameModel" [controlEl]="nameEl"></abp-validation-summary>
+                    </div>
+                </div>
+                <div class="form-group row required">
+                    <label class="col-md-3 col-form-label" for="name">
+                        Date ID
+                    </label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="name" id="name" required maxlength="32"
+                            [(ngModel)]="facthousing.dateID" #dateModel="ngModel" #dateEl />
+                        <abp-validation-summary [control]="dateModel" [controlEl]="dateEl"></abp-validation-summary>
+                    </div>
+                </div>
+                <div class="form-group row required">
+                    <label class="col-md-3 col-form-label" for="name">
+                        Address
+                    </label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="name" id="name" required maxlength="32"
+                            [(ngModel)]="facthousing.address" #addressModel="ngModel" #addressEl />
+                        <abp-validation-summary [control]="addressModel"
+                            [controlEl]="addressEl"></abp-validation-summary>
+                    </div>
+                </div>
+                <div class="form-group row required">
+                    <label class="col-md-3 col-form-label" for="name">
+                        Ward ID
+                    </label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="name" id="name" required maxlength="32"
+                            [(ngModel)]="facthousing.wardID" #wardModel="ngModel" #wardEl />
+                        <abp-validation-summary [control]="wardModel" [controlEl]="wardEl"></abp-validation-summary>
+                    </div>
+                </div>
+                <div class="form-group row required">
+                    <label class="col-md-3 col-form-label" for="name">
+                        Housetype ID
+                    </label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="name" id="name" required maxlength="32"
+                            [(ngModel)]="facthousing.houseTypeID" #housetypeModel="ngModel" #housetypeEl />
+                        <abp-validation-summary [control]="housetypeModel"
+                            [controlEl]="housetypeEl"></abp-validation-summary>
+                    </div>
+                </div>
+                <div class="form-group row required">
+                    <label class="col-md-3 col-form-label" for="name">
+                        Cert ID
+                    </label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="name" id="name" required maxlength="32"
+                            [(ngModel)]="facthousing.certID" #certModel="ngModel" #certEl />
+                        <abp-validation-summary [control]="certModel" [controlEl]="certEl"></abp-validation-summary>
+                    </div>
+                </div>
+                <div class="form-group row required">
+                    <label class="col-md-3 col-form-label" for="name">
+                        Floor
+                    </label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="name" id="name" required maxlength="32"
+                            [(ngModel)]="facthousing.floor" #floorModel="ngModel" #floorEl />
+                        <abp-validation-summary [control]="floorModel" [controlEl]="floorEl"></abp-validation-summary>
+                    </div>
+                </div>
+                <div class="form-group row required">
+                    <label class="col-md-3 col-form-label" for="name">
+                        No.Room
+                    </label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="name" id="name" required maxlength="32"
+                            [(ngModel)]="facthousing.no_Room" #roomModel="ngModel" #roomEl />
+                        <abp-validation-summary [control]="roomModel" [controlEl]="roomEl"></abp-validation-summary>
+                    </div>
+                </div>
+                <div class="form-group row required">
+                    <label class="col-md-3 col-form-label" for="name">
+                        Area
+                    </label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="name" id="name" required maxlength="32"
+                            [(ngModel)]="facthousing.area" #areaModel="ngModel" #areaEl />
+                        <abp-validation-summary [control]="areaModel" [controlEl]="areaEl"></abp-validation-summary>
+                    </div>
+                </div>
+            </tab>
+            <!-- <tab [heading]="'UserRoles' | localize" class="pt-3 px-2">
+        <div class="form-group row mb-0">
+          <ng-container *ngFor="let role of roles; let i = index">
+            <div class="col-md-6">
+              <div class="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  class="custom-control-input"
+                  [id]="'role_' + i"
+                  [checked]="isRoleChecked(role.normalizedName)"
+                  (change)="onRoleChange(role, $event)"
+                />
+                <label class="custom-control-label" [for]="'role_' + i">
+                  {{ role.name }}
+                </label>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </tab> -->
+        </tabset>
+    </div>
+    <abp-modal-footer [cancelDisabled]="saving" [saveDisabled]="!createUserModal.form.valid || saving"
+        (onCancelClick)="bsModalRef.hide()"></abp-modal-footer>
+</form>

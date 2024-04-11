@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+
+    abp_host:
+        image: abp/host
+        environment:
+            ASPNETCORE_ENVIRONMENT: Staging
+            # ConnectionStrings__Default: 'Server=docker.for.win.class\\SQLEXPRESS; Database=mGISv3Db;User Id=thang; Password=123'
+            # App__ServerRootAddress: 'https://localhost:9901/'
+            # App__ClientRootAddress: 'https://localhost:9902/'
+            # App__CorsOrigins: 'https://localhost:44311/,https://localhost:9902/'
+        ports:
+            - "9901:80"
+        volumes:
+            - "./Host-Logs:/app/App_Data/Logs"
+
+    abp_ng:
+        image: abp/ng
+        ports:
+            - "9902:80"
